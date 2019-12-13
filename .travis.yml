@@ -1,0 +1,13 @@
+language: java
+install: true
+
+os: 
+  - linux
+  - windows
+ 
+dist: trusty
+jdk: oraclejdk8
+
+script:
+  - gradle build
+  - gradle test
