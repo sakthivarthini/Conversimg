@@ -4,6 +4,8 @@
 [![made-with-java](https://img.shields.io/badge/Windows%20-compatible-1df31a.svg)](https://www.java.com/es/download/)
 [![made-with-java](https://img.shields.io/badge/Mac%20-compatible-1df31a.svg)](https://www.java.com/es/download/)
 [![made-with-java](https://img.shields.io/badge/Linux%20-compatible-1df31a.svg)](https://www.java.com/es/download/)
+[![version](https://img.shields.io/badge/Version%20-Conversimg_1.0-FF0000.svg)](https://www.java.com/es/download/)
+
 
 
 # Conversimg
@@ -59,7 +61,8 @@ gradle build
 ```
 
 If you want to **generate an executable** for your system **you must modify the file gradle.build** and indicate the
-corresponding command to be able to achieve it.
+corresponding command to be able to achieve it. However, in **the release** a **runnable jar file** is provided to
+be executed in your personal computer.
 
 
 ## 5 - Compatibility 
@@ -88,19 +91,22 @@ Commands to run the program are shown below:
 * To convert an image to another format:
 
 ```
-./Conversing> <-c> <input_image_path> <output_image_path> <output_format>
+java -jar Conversimg <-c> <input_image> <output_image> 
 
 ```
 
 * To resize an image:
 
 ```
-./Conversing> <-r> <input_image_path> <input_image_path> <percent>
+java -jar Conversimg <-r> <input_image> <output_image> <percent>
 ```
 
 ## 8 - Release
 
-Currently in development but will provide one executable for Windows and another for Linux.
+The relseased provided has a **runnable jar file** that contains all referenced dependencies and libraries. So with that file
+only the program runs correctly on any system where java is installed.
+
+
 
 
 
