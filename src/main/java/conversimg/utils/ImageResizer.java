@@ -1,3 +1,12 @@
+/*
+ *************************************************
+ ** Conversimg - An image converter and resizer **
+ ** Author: Ruben Rodriguez Esteban **************
+ ** Date: 13-12-2019 *****************************
+ *************************************************
+ */
+
+
 package conversimg.utils;
 
 import java.awt.Graphics2D;
@@ -35,6 +44,7 @@ public class ImageResizer {
 		 
 		// writes to output file
 		ImageIO.write(output, formatName, new File(outputImage));
+		System.out.println("The image has been resized succesfully");
 	}
 	 
 }

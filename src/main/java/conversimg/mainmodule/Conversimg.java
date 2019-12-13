@@ -1,3 +1,11 @@
+/*
+ *************************************************
+ ** Conversimg - An image converter and resizer **
+ ** Author: Ruben Rodriguez Esteban **************
+ ** Date: 13-12-2019 *****************************
+ *************************************************
+ */
+
 package conversimg.mainmodule;
 
 import java.awt.image.BufferedImage;
@@ -13,14 +21,14 @@ import conversimg.utils.ImageResizer;;
 public class Conversimg {
 	
 	// Number of parameters of the program
-	private static int NUMBER_OF_PARAMETERS = 5;
+	private static int NUMBER_OF_PARAMETERS = 4;
 
 	/**
 	 * Presents the different options to run the application
 	 */
 	public static void showMenu() {
 		System.out.println("Possible Invocation Options");
-		System.out.println("<Conversing> <-c> <input_image_path> <output_image_path> <output_format>");
+		System.out.println("<Conversing> <-c> <input_image_path> <output_image_path>");
 		System.out.println("<Conversing> <-r> <input_image_path> <input_image_path> <percent>\n\n");
 	}
 	
@@ -101,11 +109,18 @@ public class Conversimg {
 				System.out.println("The origin image format is not supported");
 			}
 			else {
-				// Get new dimensions of the image
-				int scaledWidth = (int) (inputImage.getWidth() * percent);
-				int scaledHeight = (int) (inputImage.getHeight() * percent);
-				// Resize the image with the specified dimensions
-				ImageResizer.resize(inputImagePath, outputImagePath, scaledWidth, scaledHeight);
+				if (!inputExtension.equals(outputExtension)) {
+					// The format of input is different of output
+					System.out.println("The formats of the images must be equal");
+				}
+				else {
+					// Get new dimensions of the image
+					int scaledWidth = (int) (inputImage.getWidth() * percent);
+					int scaledHeight = (int) (inputImage.getHeight() * percent);
+					// Resize the image with the specified dimensions
+					ImageResizer.resize(inputImagePath, outputImagePath, scaledWidth, scaledHeight);
+				}
+				
 			}
 		}
 	}
@@ -123,21 +138,25 @@ public class Conversimg {
 	 */
 	public static void main(String[] args) throws NumberFormatException, IOException {
 		// Shows in terminal how to invoke the program if the parameters are wrong
-		if (args.length != NUMBER_OF_PARAMETERS) {
+		if (args.length != NUMBER_OF_PARAMETERS && args.length != NUMBER_OF_PARAMETERS - 1) {
 			// Wrong number of parameters introduced
 			showMenu();
 		}
 		else {
 			// The number of parameters is correct
-			
 			// Check if the execution flag is correct
-			if (args[1].equals("-c")) {
+			if (args[0].equals("-c")) {
 				// Conversion of the image
-				convertImage(args[3], args[4], args[5]);
+				String format = args[2].substring(args[2].lastIndexOf(".") + 1);
+				convertImage(args[1], args[2], format);
 			}
-			else if (args[1].equals("-r")) {
+			else if (args[0].equals("-r")) {
 				// Resize of the image
-				resizeImage(args[3], args[4], Double.parseDouble(args[5]));
+				resizeImage(args[1], args[2], Double.parseDouble(args[3]));
+			}
+			else {
+				// Incorrect flag introduced
+				System.out.println("Flag option choosen is not contempled");
 			}
 		}
 		System.out.println("Final execution programm");

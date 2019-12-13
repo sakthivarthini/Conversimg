@@ -1,3 +1,11 @@
+/*
+ *************************************************
+ ** Conversimg - An image converter and resizer **
+ ** Author: Ruben Rodriguez Esteban **************
+ ** Date: 13-12-2019 *****************************
+ *************************************************
+ */
+
 package conversimg.utils;
 
 import java.awt.image.BufferedImage;
