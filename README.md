@@ -109,12 +109,11 @@ only the program runs correctly on any system where java is installed.
 
 ## 9 - Images of different scenaries of execution
 
-Below are some example images that show the execution of the program realised both in **native windowds 10** and **in a virtual
-machine with Debian 10**.
+Below are example images that show some execution scenearies of the program realised both in **native windowds 10** and **in a
+virtual machine with Debian 10**.
 
 
-The following image shows how the programm works when the order for convert an image is written correctly:  
-
+* The following image shows how the programm works when the order for convert an image is written correctly:  
 
 ![correct conversion windows](https://i.ibb.co/T8Fvnfb/1.jpg)
 
@@ -122,9 +121,7 @@ The following image shows how the programm works when the order for convert an i
 ![correct conversion linux](https://i.ibb.co/tbmcX4T/4.jpg)  
 
 
-
-  
-The following image shows how the programm works when the order for resize an image is written correctly:
+* The following image shows how the programm works when the order for resize an image is written correctly:
 
 ![correct resize windows](https://i.ibb.co/dD9mv7z/2.jpg)
 
@@ -132,7 +129,7 @@ The following image shows how the programm works when the order for resize an im
 ![correct resize linux](https://i.ibb.co/ynfxfGR/5.jpg)
 
 
-The following image shows how the programm works when the order for convert an image with a not supported format:
+* The following image shows how the programm works when the order for convert an image with a not supported format:
 
 ![not supported format windows](https://i.ibb.co/mb9QHTw/3.jpg)
 
@@ -141,7 +138,7 @@ The following image shows how the programm works when the order for convert an i
 
 
 
-The following image shows how the programm works when the order is not correct:
+* The following image shows how the programm works when the order is not correct:
 
 ![Incorrect flag windows](https://i.ibb.co/t2zf566/3.jpg)
 
@@ -150,7 +147,7 @@ The following image shows how the programm works when the order is not correct:
 
 
 
-The following image shows how the programm works when an image is resized but the output format is changed:
+* The following image shows how the programm works when an image is resized but the output format is changed:
 
 ![bad output format changed windows](https://i.ibb.co/d2fQSbJ/0.jpg)
 
