@@ -59,15 +59,21 @@ public class Conversimg {
 					System.out.println("The destination image format is not supported");
 				}
 				else {
-					// Attempt to convert the image
-					boolean result = ImageConverter.convertFormat(inputImage, oututImage, formatName);
-					if (result) {
-						// The image gas been converted correctly
-						System.out.println("Image converted successfully.");
-						} 
+					// Check if the format is the same 
+					if (!inputExtension.equals(formatName)){
+						// Attempt to convert the image
+						boolean result = ImageConverter.convertFormat(inputImage, oututImage, formatName);
+						if (result) {
+							// The image gas been converted correctly
+							System.out.println("Image converted successfully.");
+							} 
+						else {
+							// The image has not been converted well
+							System.out.println("Could not convert image.");
+						}
+					}
 					else {
-						// The image has not been converted well
-						System.out.println("Could not convert image.");
+						System.out.println("The format of input and output is the same");
 					}
 				}
 			}
@@ -146,13 +152,26 @@ public class Conversimg {
 			// The number of parameters is correct
 			// Check if the execution flag is correct
 			if (args[0].equals("-c")) {
-				// Conversion of the image
-				String format = args[2].substring(args[2].lastIndexOf(".") + 1);
-				convertImage(args[1], args[2], format);
+				// Check if the number of arguments is correct
+				if (args.length != NUMBER_OF_PARAMETERS - 1) {
+					System.out.println("Wrong amount of parameters for convert an image");
+				}
+				else {
+					// Conversion of the image
+					String format = args[2].substring(args[2].lastIndexOf(".") + 1);
+					convertImage(args[1], args[2], format);
+				}
+				
 			}
 			else if (args[0].equals("-r")) {
-				// Resize of the image
-				resizeImage(args[1], args[2], Double.parseDouble(args[3]));
+				// Check if the number of arguments is correct
+				if (args.length != NUMBER_OF_PARAMETERS) {
+					System.out.println("Wrong amount of parameters for resize an image");
+				}
+				else {
+					// Resize of the image
+					resizeImage(args[1], args[2], Double.parseDouble(args[3]));
+				}
 			}
 			else {
 				// Incorrect flag introduced
@@ -162,4 +181,3 @@ public class Conversimg {
 		System.out.println("Final execution programm");
 	}
 }
-
