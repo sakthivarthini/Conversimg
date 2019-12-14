@@ -120,6 +120,8 @@ virtual machine with Debian 10**.
 
 ![correct conversion linux](https://i.ibb.co/tbmcX4T/4.jpg)  
 
+&nbsp;
+
 
 * The following image shows how the programm works when the order for resize an image is written correctly:
 
@@ -127,6 +129,8 @@ virtual machine with Debian 10**.
 
 
 ![correct resize linux](https://i.ibb.co/ynfxfGR/5.jpg)
+
+&nbsp;
 
 
 * The following image shows how the programm works when the order for convert an image with a not supported format:
@@ -136,6 +140,7 @@ virtual machine with Debian 10**.
 
 ![not supported format linux](https://i.ibb.co/qCHMPz9/2.jpg)
 
+&nbsp;
 
 
 * The following image shows how the programm works when the order is not correct:
@@ -145,6 +150,7 @@ virtual machine with Debian 10**.
 
 ![Incorrect flag linux](https://i.ibb.co/vX8LDqv/0.jpg)
 
+&nbsp;
 
 
 * The following image shows how the programm works when an image is resized but the output format is changed:
