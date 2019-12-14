@@ -91,20 +91,72 @@ Commands to run the program are shown below:
 * To convert an image to another format:
 
 ```
-java -jar Conversimg <-c> <input_image> <output_image> 
+java -jar Conversimg.jar <-c> <input_image> <output_image> 
 
 ```
 
 * To resize an image:
 
 ```
-java -jar Conversimg <-r> <input_image> <output_image> <percent>
+java -jar Conversimg.jar <-r> <input_image> <output_image> <percent>
 ```
 
 ## 8 - Release
 
-The relseased provided has a **runnable jar file** that contains all referenced dependencies and libraries. So with that file
+The relsease provided has a **runnable jar file** that contains all referenced dependencies and libraries. So with that file
 only the program runs correctly on any system where java is installed.
+
+
+## 9 - Images of different scenaries of execution
+
+Below are some example images that show the execution of the program realised both in **native windowds 10** and **in a virtual
+machine with Debian 10**.
+
+
+The following image shows how the programm works when the order for convert an image is written correctly:  
+
+
+![correct conversion windows](https://i.ibb.co/T8Fvnfb/1.jpg)
+
+
+![correct conversion linux](https://i.ibb.co/tbmcX4T/4.jpg)  
+
+
+
+  
+The following image shows how the programm works when the order for resize an image is written correctly:
+
+![correct resize windows](https://i.ibb.co/dD9mv7z/2.jpg)
+
+
+![correct resize linux](https://i.ibb.co/ynfxfGR/5.jpg)
+
+
+The following image shows how the programm works when the order for convert an image with a not supported format:
+
+![not supported format windows](https://i.ibb.co/mb9QHTw/3.jpg)
+
+
+![not supported format linux](https://i.ibb.co/qCHMPz9/2.jpg)
+
+
+
+The following image shows how the programm works when the order is not correct:
+
+![Incorrect flag windows](https://i.ibb.co/t2zf566/3.jpg)
+
+
+![Incorrect flag linux](https://i.ibb.co/vX8LDqv/0.jpg)
+
+
+
+The following image shows how the programm works when an image is resized but the output format is changed:
+
+![bad output format changed windows](https://i.ibb.co/d2fQSbJ/0.jpg)
+
+
+![bad output format changed linux](https://i.ibb.co/SdTcJNc/0.jpg)
+
 
 
 
