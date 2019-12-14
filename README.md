@@ -1,13 +1,3 @@
-
-[![Build Status](https://travis-ci.org/ZgzInfinity/Conversimg.svg?branch=master)](https://travis-ci.org/ZgzInfinity/Conversimg)
-[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
-[![made-with-java](https://img.shields.io/badge/Made%20with-java-e01250.svg)](https://www.java.com/es/download/)
-[![built-with-gradle](https://img.shields.io/badge/Built%20with-gradle-1a3ef3.svg)](https://gradle.org/install/)
-[![windows](https://img.shields.io/badge/Windows%20-compatible-1df31a.svg)](https://www.microsoft.com/es-es/windows)
-[![mac](https://img.shields.io/badge/Mac%20-compatible-1df31a.svg)](https://www.apple.com/es/mac/)
-[![linux](https://img.shields.io/badge/Linux%20-compatible-1df31a.svg)](https://www.linux.org/)
-[![release](https://img.shields.io/badge/Version%20-1.0-FF0000.svg)](https://github.com/ZgzInfinity/Conversimg/releases)
-
 <p align="center">
     <img src="https://i.ibb.co/gW8xHF7/logo.png" alt="Logo" width=100 height=100>
   </a>
@@ -18,6 +8,17 @@
     <b>An open-source image converter and resizer</b> <br>
   </p>
 </p>
+
+[![Build Status](https://travis-ci.org/ZgzInfinity/Conversimg.svg?branch=master)](https://travis-ci.org/ZgzInfinity/Conversimg)
+[![License: LGPL v3](https://img.shields.io/badge/License-LGPL%20v3-blue.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+[![made-with-java](https://img.shields.io/badge/Made%20with-java-e01250.svg)](https://www.java.com/es/download/)
+[![built-with-gradle](https://img.shields.io/badge/Built%20with-gradle-1a3ef3.svg)](https://gradle.org/install/)
+[![windows](https://img.shields.io/badge/Windows%20-compatible-1df31a.svg)](https://www.microsoft.com/es-es/windows)
+[![mac](https://img.shields.io/badge/Mac%20-compatible-1df31a.svg)](https://www.apple.com/es/mac/)
+[![linux](https://img.shields.io/badge/Linux%20-compatible-1df31a.svg)](https://www.linux.org/)
+[![release](https://img.shields.io/badge/Version%20-1.0-FF0000.svg)](https://github.com/ZgzInfinity/Conversimg/releases)
+
+&nbsp;
 
 ## 1 - Description
 
