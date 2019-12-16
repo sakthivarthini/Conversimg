@@ -50,23 +50,30 @@ public class PdfCreator {
 	public static void convertImageToPdf(String inputImage, String outputFile) throws MalformedURLException, 
 																	IOException, DocumentException
 	{
-		// Creation of the document with their dimension 
-		// YO CAN CHANGE THE DIMENSIONS IF YOU WANT
-		Document document = new Document(PageSize.A4, 20, 20, 20, 20);					
-		PdfWriter.getInstance(document, new FileOutputStream(new File(outputFile)));
-		// Preparing the document
-		document.open();
-		document.newPage();
-		// Read the image
-		Image image = Image.getInstance(new File(inputImage).getAbsolutePath());
-		// Insert the image in the pdf document
-		image.setAbsolutePosition(0, 0);
-		image.setBorderWidth(0);
-		image.scaleAbsoluteHeight(PageSize.A4.getHeight());
-		image.scaleAbsoluteWidth(PageSize.A4.getWidth());
-		// Add the image an close the document
-		document.add(image);
-		document.close();
+		// Check if the destination file is a pdf
+		if (isPdfFile(outputFile)) {	
+			// Creation of the document with their dimension 
+			// YO CAN CHANGE THE DIMENSIONS IF YOU WANT
+			Document document = new Document(PageSize.A4, 20, 20, 20, 20);					
+			PdfWriter.getInstance(document, new FileOutputStream(new File(outputFile)));
+			// Preparing the document
+			document.open();
+			document.newPage();
+			// Read the image
+			Image image = Image.getInstance(new File(inputImage).getAbsolutePath());
+			// Insert the image in the pdf document
+			image.setAbsolutePosition(0, 0);
+			image.setBorderWidth(0);
+			image.scaleAbsoluteHeight(PageSize.A4.getHeight());
+			image.scaleAbsoluteWidth(PageSize.A4.getWidth());
+			// Add the image an close the document
+			document.add(image);
+			document.close();
+		}
+		else {
+			// Error because the destination file is not a pdf
+			System.out.println("The destination file must be a pdf");
+		}
 	}
 	
 	
@@ -94,7 +101,7 @@ public class PdfCreator {
 		}
 		else {
 			// The file is not a pdf 
-			System.out.println("The file introduced is not a pdf");
+			System.out.println("The origin file introduced is not a pdf");
 		}
 		
 	}
