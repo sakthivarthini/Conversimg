@@ -16,7 +16,7 @@
 [![windows](https://img.shields.io/badge/Windows%20-compatible-1df31a.svg)](https://www.microsoft.com/es-es/windows)
 [![mac](https://img.shields.io/badge/Mac%20-compatible-1df31a.svg)](https://www.apple.com/es/mac/)
 [![linux](https://img.shields.io/badge/Linux%20-compatible-1df31a.svg)](https://www.linux.org/)
-[![release](https://img.shields.io/badge/Version%20-1.0-FF0000.svg)](https://github.com/ZgzInfinity/Conversimg/releases)
+[![release](https://img.shields.io/badge/Version%20-2.0-FF0000.svg)](https://github.com/ZgzInfinity/Conversimg/releases)
 
 &nbsp;
 
