@@ -30,10 +30,19 @@ locally without having to resort to external services on the Internet.
 
 Conversimg works with the most standardized image formats. The supported formats are the following:
 
+Version 1.0:
+
 * BMP (Windows bitmap).
 * JPG (Joint Photographic Experts Group).
 * GIF (Graphic Interchange Format).
 * PNG (Portable Network Graphics).
+
+Version 2.0:
+
+Able conversion from image to pdf and viceversa
+
+* From BMP, JPG,  GIF, PNG to PDF
+* From PDF to jpg bmp BMP gif GIF WBMP iff IFF png PNG JPEG wbmp jpeg
 
 More formats will be added in later versions.
 
@@ -107,6 +116,18 @@ java -jar Conversimg.jar <-c> <input_image> <output_image>
 
 ```
 java -jar Conversimg.jar <-r> <input_image> <output_image> <percent>
+```
+
+* To convert from image to pdf
+
+```
+java -jar Conversimg.jar <-ip> <input_image> <output_pdf>
+```
+
+* To convert from pdf to image
+
+```
+java -jar Conversimg.jar <-pi> <input_pdf> <out_put>
 ```
 
 ## 8 - Release
