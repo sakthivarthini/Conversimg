@@ -9,11 +9,14 @@
 
 package conversimg.utils;
 
-import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImageOp;
 import java.io.File;
 import java.io.IOException;
+
 import javax.imageio.ImageIO;
+
+import com.twelvemonkeys.image.ResampleOp;
 
 public class ImageResizer {
 	
@@ -31,17 +34,12 @@ public class ImageResizer {
 		File inputFile = new File(inputImage);
 		BufferedImage input = ImageIO.read(inputFile);
 	 
-		// creates output image
-		BufferedImage output = new BufferedImage(scaledWidth, scaledHeight, input.getType());
-		    
-		// scales the input image to the output image
-		Graphics2D g2d = output.createGraphics();
-		g2d.drawImage(input, 0, 0, scaledWidth, scaledHeight, null);
-		g2d.dispose();
-					 
-		// extracts extension of output file
-		String formatName = outputImage.substring(outputImage.lastIndexOf(".") + 1);
+	    BufferedImageOp resampler = new ResampleOp(scaledWidth, scaledHeight, ResampleOp.FILTER_LANCZOS);
+	    BufferedImage output = resampler.filter(input, null);
 		 
+	    // extracts extension of output file
+	 	String formatName = outputImage.substring(outputImage.lastIndexOf(".") + 1);
+	 	
 		// writes to output file
 		ImageIO.write(output, formatName, new File(outputImage));
 		System.out.println("The image has been resized succesfully");

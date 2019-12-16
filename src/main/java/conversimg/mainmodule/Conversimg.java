@@ -11,17 +11,25 @@ package conversimg.mainmodule;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.MalformedURLException;
 
 import javax.imageio.ImageIO;
 
+import com.itextpdf.text.DocumentException;
+
 import conversimg.utils.ImageConverter;
-import conversimg.utils.ImageResizer;;
+import conversimg.utils.ImageResizer;
+import conversimg.utils.PdfCreator;
+
 
 
 public class Conversimg {
 	
 	// Number of parameters of the program
-	private static int NUMBER_OF_PARAMETERS = 4;
+	private static int PARAMETERS_CONVERSION = 3;
+	private static int PARAMETERS_RESIZE = 4;
+	private static int PARAMETERS_PDF = 3;
+
 
 	/**
 	 * Presents the different options to run the application
@@ -132,19 +140,53 @@ public class Conversimg {
 	}
 	
 	
+
+	/**
+	 * Obtains a pdf file given an image file
+	 * @param inputImagePath Path of the original image
+	 * @param outputImagePath Path to save the pdf file
+	 * @throws DocumentException 
+	 * @throws MalformedURLException 
+	 * @throws IOException
+	 */
+	public static void convertImageToPdfFile(String inputImagePath, String outputImagePath) throws MalformedURLException, 
+																								   IOException, DocumentException 
+	{
+		// Conversion of the image to pdf file
+		PdfCreator.convertImageToPdf(inputImagePath, outputImagePath);
+	}
+
+
+
+	/**
+	 * Obtains a pdf file given an image file
+	 * @param inputImagePath Path of the original pdf
+	 * @param outputImagePath Path to save the image
+	 * @throws DocumentException 
+	 * @throws MalformedURLException 
+	 * @throws IOException
+	 */
+	public static void convertPdfToImage(String inputImagePath, String outputImagePath) throws MalformedURLException, 
+																							   IOException, DocumentException 
+	{
+		// Conversion of the pdf to a image file
+		PdfCreator.convertPdfToImage(inputImagePath, outputImagePath);
+	}
 	
+
+
 	/**
 	 * Application that allows the user to resize or change the format of 
 	 * the images that the user wants.
 	 * 
 	 * @param argc is the nunber of parameters of the application
 	 * @param args is the vector of parameters of the application
-	 * @throws NumberFormatException
 	 * @throws NumberFormatException, IOException
+	 * @throws DocumentException 
 	 */
-	public static void main(String[] args) throws NumberFormatException, IOException {
+	public static void main(String[] args) throws NumberFormatException, IOException, DocumentException {
 		// Shows in terminal how to invoke the program if the parameters are wrong
-		if (args.length != NUMBER_OF_PARAMETERS && args.length != NUMBER_OF_PARAMETERS - 1) {
+		if (args.length != PARAMETERS_CONVERSION && args.length != PARAMETERS_RESIZE && args.length != PARAMETERS_PDF) {
 			// Wrong number of parameters introduced
 			showMenu();
 		}
@@ -153,7 +195,7 @@ public class Conversimg {
 			// Check if the execution flag is correct
 			if (args[0].equals("-c")) {
 				// Check if the number of arguments is correct
-				if (args.length != NUMBER_OF_PARAMETERS - 1) {
+				if (args.length != PARAMETERS_CONVERSION) {
 					System.out.println("Wrong amount of parameters for convert an image");
 				}
 				else {
@@ -165,13 +207,35 @@ public class Conversimg {
 			}
 			else if (args[0].equals("-r")) {
 				// Check if the number of arguments is correct
-				if (args.length != NUMBER_OF_PARAMETERS) {
+				if (args.length != PARAMETERS_RESIZE) {
 					System.out.println("Wrong amount of parameters for resize an image");
 				}
 				else {
 					// Resize of the image
 					resizeImage(args[1], args[2], Double.parseDouble(args[3]));
 				}
+			}
+			else if (args[0].equals("-ip")) {
+				// Check if the number of arguments is correct
+				// Check if the number of arguments is correct
+				if (args.length != PARAMETERS_PDF) {
+					System.out.println("Wrong amount of parameters for convert from image to pdf");
+				}
+				else {
+					// Conversion from image to pdf
+					convertImageToPdfFile(args[1], args[2]);
+				}
+			}
+			else if (args[0].equals("-pi")) {
+				// Check if the number of arguments is correct
+				if (args.length != PARAMETERS_PDF) {
+					System.out.println("Wrong amount of parameters for convert from pdf to image");
+				}
+				else {
+					// Conversion from pdf to image
+					PdfCreator.convertPdfToImage(args[1], args[2]);
+				}
+				
 			}
 			else {
 				// Incorrect flag introduced
